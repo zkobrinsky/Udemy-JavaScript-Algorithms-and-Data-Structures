@@ -13,9 +13,7 @@ const countUniqueValues = (array) => {
   let left = 0;
   let right = 1;
 
-  if (array.length === 0) {
-    return 0;
-  }
+  if (array.length === 0) return 0;
 
   while (right < array.length) {
     if (array[left] === array[right] || left === right) {
@@ -30,12 +28,30 @@ const countUniqueValues = (array) => {
   return counter;
 };
 
-console.log(countUniqueValues(array));
+// console.log(countUniqueValues(array));
 
+// Solution 2:
 // using Set:
 
-// const countUniqueValuesWithSet = (array) => {
+// const countUniqueValuesWithSet = array => {
 //   return [...new Set(array)].length;
 // };
 
 // console.log(countUniqueValuesWithSet(array));
+
+// Solution 3
+// Cole's solution (destructive):
+// const countUniqueValuesDestructive = (arr) => {
+//   if (array.length === 0) return 0;
+
+//   let i = 0;
+//   for (let j = 1; j < arr.length; j++) {
+//     if (arr[i] !== arr[j]) {
+//       i++;
+//       arr[i] = arr[j];
+//     }
+//   }
+//   return i + 1;
+// };
+
+// console.log(countUniqueValuesDestructive(array));
