@@ -2,7 +2,7 @@
 // let array = [1, 1, 1, 1, 1, 1, 2];
 let array = [1, 2, 3, 4, 4, 4, 4, 4, 7, 7, 12, 12, 13];
 // let array = [];
-// let array = [-2,-1,-1,0,1]
+// let array = [-2, -1, -1, 0, 1];
 
 // return an integer
 // iterate through array
@@ -31,3 +31,11 @@ const countUniqueValues = (array) => {
 };
 
 console.log(countUniqueValues(array));
+
+// using Set:
+
+// const countUniqueValuesWithSet = (array) => {
+//   return [...new Set(array)].length;
+// };
+
+// console.log(countUniqueValuesWithSet(array));
