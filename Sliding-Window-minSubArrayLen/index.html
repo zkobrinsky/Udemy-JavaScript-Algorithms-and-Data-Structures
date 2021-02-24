@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="instructions--instructions---q1NT">
+      <div class="instructions--content--1JI0g">
+        <div class="instructions--title--3vSDk" data-purpose="exercise-title">
+          Sliding Window - minSubArrayLen
+        </div>
+        <div
+          data-purpose="safely-set-inner-html:rich-text-viewer:html"
+          class="instructions--description--2Qd_w"
+        >
+          <p>
+            Write a function called <b>minSubArrayLen</b> which accepts two
+            parameters - an array of positive integers and a positive integer.
+          </p>
+
+          <p>
+            This function should return the minimal length of a
+            <b>contiguous</b> subarray of which the sum is greater than or equal
+            to the integer passed to the function. If there isn't one, return 0
+            instead.<br />Examples:
+          </p>
+
+          <div class="ud-component--base-components--code-block">
+            <div>
+              <pre
+                class="prettyprint linenums prettyprinted"
+                role="presentation"
+              ><ol class="linenums"><li class="L0"><span class="pln">minSubArrayLen</span><span class="pun">([</span><span class="lit">2</span><span class="pun">,</span><span class="lit">3</span><span class="pun">,</span><span class="lit">1</span><span class="pun">,</span><span class="lit">2</span><span class="pun">,</span><span class="lit">4</span><span class="pun">,</span><span class="lit">3</span><span class="pun">],</span><span class="pln"> </span><span class="lit">7</span><span class="pun">)</span><span class="pln"> </span><span class="com">// 2 -&gt; because [4,3] is the smallest subarray</span></li><li class="L1"><span class="pln">minSubArrayLen</span><span class="pun">([</span><span class="lit">2</span><span class="pun">,</span><span class="lit">1</span><span class="pun">,</span><span class="lit">6</span><span class="pun">,</span><span class="lit">5</span><span class="pun">,</span><span class="lit">4</span><span class="pun">],</span><span class="pln"> </span><span class="lit">9</span><span class="pun">)</span><span class="pln"> </span><span class="com">// 2 -&gt; because [5,4] is the smallest subarray</span></li><li class="L2"><span class="pln">minSubArrayLen</span><span class="pun">([</span><span class="lit">3</span><span class="pun">,</span><span class="lit">1</span><span class="pun">,</span><span class="lit">7</span><span class="pun">,</span><span class="lit">11</span><span class="pun">,</span><span class="lit">2</span><span class="pun">,</span><span class="lit">9</span><span class="pun">,</span><span class="lit">8</span><span class="pun">,</span><span class="lit">21</span><span class="pun">,</span><span class="lit">62</span><span class="pun">,</span><span class="lit">33</span><span class="pun">,</span><span class="lit">19</span><span class="pun">],</span><span class="pln"> </span><span class="lit">52</span><span class="pun">)</span><span class="pln"> </span><span class="com">// 1 -&gt; because [62] is greater than 52</span></li><li class="L3"><span class="pln">minSubArrayLen</span><span class="pun">([</span><span class="lit">1</span><span class="pun">,</span><span class="lit">4</span><span class="pun">,</span><span class="lit">16</span><span class="pun">,</span><span class="lit">22</span><span class="pun">,</span><span class="lit">5</span><span class="pun">,</span><span class="lit">7</span><span class="pun">,</span><span class="lit">8</span><span class="pun">,</span><span class="lit">9</span><span class="pun">,</span><span class="lit">10</span><span class="pun">],</span><span class="lit">39</span><span class="pun">)</span><span class="pln"> </span><span class="com">// 3</span></li><li class="L4"><span class="pln">minSubArrayLen</span><span class="pun">([</span><span class="lit">1</span><span class="pun">,</span><span class="lit">4</span><span class="pun">,</span><span class="lit">16</span><span class="pun">,</span><span class="lit">22</span><span class="pun">,</span><span class="lit">5</span><span class="pun">,</span><span class="lit">7</span><span class="pun">,</span><span class="lit">8</span><span class="pun">,</span><span class="lit">9</span><span class="pun">,</span><span class="lit">10</span><span class="pun">],</span><span class="lit">55</span><span class="pun">)</span><span class="pln"> </span><span class="com">// 5</span></li><li class="L5"><span class="pln">minSubArrayLen</span><span class="pun">([</span><span class="lit">4</span><span class="pun">,</span><span class="pln"> </span><span class="lit">3</span><span class="pun">,</span><span class="pln"> </span><span class="lit">3</span><span class="pun">,</span><span class="pln"> </span><span class="lit">8</span><span class="pun">,</span><span class="pln"> </span><span class="lit">1</span><span class="pun">,</span><span class="pln"> </span><span class="lit">2</span><span class="pun">,</span><span class="pln"> </span><span class="lit">3</span><span class="pun">],</span><span class="pln"> </span><span class="lit">11</span><span class="pun">)</span><span class="pln"> </span><span class="com">// 2</span></li><li class="L6"><span class="pln">minSubArrayLen</span><span class="pun">([</span><span class="lit">1</span><span class="pun">,</span><span class="lit">4</span><span class="pun">,</span><span class="lit">16</span><span class="pun">,</span><span class="lit">22</span><span class="pun">,</span><span class="lit">5</span><span class="pun">,</span><span class="lit">7</span><span class="pun">,</span><span class="lit">8</span><span class="pun">,</span><span class="lit">9</span><span class="pun">,</span><span class="lit">10</span><span class="pun">],</span><span class="lit">95</span><span class="pun">)</span><span class="pln"> </span><span class="com">// 0</span></li></ol></pre>
+            </div>
+          </div>
+
+          <p>Time Complexity - O(n)</p>
+
+          <p>Space Complexity - O(1)</p>
+        </div>
+      </div>
+      <div class="instructions--drag-handle--ocDGT"></div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
