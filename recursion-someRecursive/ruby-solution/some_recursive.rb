@@ -10,7 +10,8 @@ end
 def some_recursive(arr, cb)
     return false if arr.empty?
   
-    some_method = self.method(cb)  
+    # stores the method into a variable
+    some_method = method(cb)  
 
     if some_method.call(arr[0]) == true
         return true
