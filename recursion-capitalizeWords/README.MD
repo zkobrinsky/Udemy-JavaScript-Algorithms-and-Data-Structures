@@ -1,0 +1,1 @@
+<p>Write a recursive function called <strong>capitalizeWords</strong>. Given an array of words, return a new array containing each word capitalized.</p>

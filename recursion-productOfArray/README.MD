@@ -1,0 +1,1 @@
+<p>Write a function called&nbsp;<code>productOfArray</code>&nbsp;which takes in an array of numbers and returns the product of them all.</p>
