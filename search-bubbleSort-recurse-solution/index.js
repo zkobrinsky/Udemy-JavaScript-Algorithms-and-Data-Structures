@@ -1,7 +1,4 @@
 function bubbleSort(arr) {
-    return recurse(arr)
-
-    function recurse(arr) {
     let finished = true;
         for (let i = 0; i < arr.length-1; i++) {
             if (arr[i] > arr[i+1]) {
@@ -14,14 +11,11 @@ function bubbleSort(arr) {
                 continue;
             }
            }
-
            if (finished === false) {
-               return recurse(arr);
+               return bubbleSort(arr);
            } else {
                return arr;
            }
-    }
-
 }
 
 bubbleSort([5,4,29,72,1,98,1,72])
