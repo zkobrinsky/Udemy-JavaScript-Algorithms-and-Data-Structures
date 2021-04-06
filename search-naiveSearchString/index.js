@@ -5,7 +5,7 @@
 //         if (str[i] === target[0]) {
 //             for (let j = 0; j < target.length; j++) {
 //                 if(str[i+j] !== target[j]) {
-//                     continue;
+//                     break;
 //                 } else {
 //                     if (j === target.length-1) {
 //                         counter++;
