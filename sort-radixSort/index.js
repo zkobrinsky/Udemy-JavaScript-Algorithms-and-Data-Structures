@@ -1,4 +1,3 @@
-// get the value of the decimal position(place)
 function getDigit(num, place) {
   // zach solution:
   string = (num / 10 ** place).toString().split(".")[0];
@@ -10,7 +9,6 @@ function getDigit(num, place) {
 
 function digitCount(num) {
   // zach solution
-  //   debugger;
   return Math.floor(num).toString().replace(/-/, "").length;
 
   // colt solution
@@ -43,7 +41,4 @@ function radixSort(arr) {
   return arr;
 }
 
-// console.log(getDigit(12345, 0));
-// console.log(digitCount(0));
-// console.log(mostDigits([1234, 56, 7]));
 console.log(radixSort([1234, -56, 7, 72, 98884, -83590, 12, 3, 84]));
