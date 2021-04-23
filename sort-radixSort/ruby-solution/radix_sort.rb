@@ -1,9 +1,7 @@
 require 'pry'
 
 # helpers:
-
 def get_digit(num, place)
-    # binding.pry
     string = (num / 10 ** place).to_s.split(".")[0]
     string[string.length - 1].to_i
 end
@@ -27,40 +25,20 @@ def radix_sort(arr)
     for k in 0..num_digits
         digit_buckets = Array.new(10){ [] }
         neg_digit_buckets = Array.new(10){ [] }
-        # binding.pry
         for i in 0..arr.length-1
             digit = get_digit(arr[i],k)
-            if digit.negative?
-                neg_digit_buckets[digit * -1 + 9].push(arr[i])
+            if arr[i].negative?
+                neg_digit_buckets[digit * -1 + 9] << (arr[i])
             else
-                digit_buckets[digit].push(arr[i])
+                digit_buckets[digit] << (arr[i])
             end
         end
-        # arr = [].concat(neg_digit_buckets, digit_buckets)
+        arr = neg_digit_buckets.flatten.concat(digit_buckets.flatten)
     end
     arr
 end
 
-
-    # function radixSort(arr) {
-    #     let numDigits = mostDigits(arr);
-    #     for (let k = 0; k < numDigits; k++) {
-    #       let digitBuckets = Array.from({ length: 10 }, () => []);
-    #       let negDigitBuckets = Array.from({ length: 10 }, () => []);
-    #       for (let i = 0; i < arr.length; i++) {
-    #         let digit = getDigit(arr[i], k);
-    #         if (Math.sign(arr[i]) === -1) {
-    #           negDigitBuckets[digit * -1 + 9].push(arr[i]);
-    #         } else {
-    #           digitBuckets[digit].push(arr[i]);
-    #         }
-    #       }
-    #       arr = [].concat(...negDigitBuckets, ...digitBuckets);
-    #     }
-    #     return arr;
-    #   }
-
-p radix_sort([23,345,5467,12,2345,9852])
+p radix_sort([23,345,5467,-12,23345,-9852])
 
 # p get_digit(15432,5)
 # p digit_count(1234)
