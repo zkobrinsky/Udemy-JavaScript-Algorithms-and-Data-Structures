@@ -45,7 +45,7 @@ class SinglyLinkedList
         @tail.next = nil
         @length-=1
     
-        if @length === 0
+        if @length == 0
           @head = nil
           @tail = nil
         end
@@ -118,7 +118,74 @@ class SinglyLinkedList
         return true
     end
 
-    
+    def insert(val, index)
+      if index < 0 || index > @length
+        return false
+      end
+      if (index == 0)
+        !!self.unshift(val)
+      end
+      if (index == @length)
+        return !!self.push(val)
+      end
+  
+      leftNode = self.get(index - 1)
+      rightNode = self.get(index)
+  
+      newNode = Node.new(val)
+      leftNode.next = newNode
+      newNode.next = rightNode
+      @length+=1
+      return true
+    end
+
+    def remove(index)
+      if index < 0 || index > @length
+        return undefined
+      end
+      if index == @length - 1 
+        return self.pop
+      end
+      if index == 0
+        return self.shift
+      end
+  
+      node = self.get(index)
+      rightNode = node.next
+      leftNode = self.get(index - 1)
+      leftNode.next = rightNode
+      node.val = nil
+      @length-=1
+      return node
+    end
+
+    def print
+      arr = []
+      current = self.head
+      while (current) 
+        arr.push(current.val)
+        current = current.next
+      end
+      return arr
+    end
+
+    def reverse
+      # swap
+      node = @head
+      @head = @tail
+      @tail = node
+  
+      next_node = nil
+      prev = nil
+  
+      for i in 0..@length-1
+        next_node = node.next
+        node.next = prev
+        prev = node
+        node = next_node
+      end
+      return self
+    end
  end
 
  list = SinglyLinkedList.new
