@@ -17,7 +17,7 @@ class Queue
         self.size = 0
     end
 
-    def push(value)
+    def enqueue(value)
         node = Node.new(value)
         if self.first == nil
             self.first = node
@@ -30,8 +30,9 @@ class Queue
         node
     end
 
-    def unshift
+    def dequeue
         if self.first == nil
+            return nil
         elsif self.first.next == nil
             self.first = nil
             self.last = nil
