@@ -37,8 +37,8 @@ class BST {
   }
 
   find(val, parent = this.root) {
-    if (!parent) return null;
-    if (val === parent.val) return parent;
+    if (!parent) return false;
+    if (val === parent.val) return true;
     if (val > parent.val) {
       if (parent.right) {
         return this.find(val, parent.right);
@@ -48,7 +48,7 @@ class BST {
         return this.find(val, parent.left);
       }
     }
-    return null;
+    return false;
   }
 }
 
