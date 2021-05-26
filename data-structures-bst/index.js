@@ -50,6 +50,57 @@ class BST {
     }
     return null;
   }
+
+  BFS() {
+    let data = [],
+      queue = [],
+      node = this.root;
+
+    queue.push(node);
+    while (queue.length) {
+      node = queue.shift();
+      data.push(node.val);
+      if (node.left) queue.push(node.left);
+      if (node.right) queue.push(node.right);
+    }
+    return data;
+  }
+
+  DFS_Pre() {
+    let data = [];
+    recurse(this.root);
+
+    function recurse(node) {
+      data.push(node.val);
+      if (node.left) recurse(node.left);
+      if (node.right) recurse(node.right);
+    }
+    return data;
+  }
+
+  DFS_Post() {
+    let data = [];
+    recurse(this.root);
+
+    function recurse(node) {
+      if (node.left) recurse(node.left);
+      if (node.right) recurse(node.right);
+      data.push(node.val);
+    }
+    return data;
+  }
+
+  DFS_InOrder() {
+    let data = [];
+    recurse(this.root);
+
+    function recurse(node) {
+      if (node.left) recurse(node.left);
+      data.push(node.val);
+      if (node.right) recurse(node.right);
+    }
+    return data;
+  }
 }
 
 let tree = new BST();
