@@ -14,7 +14,7 @@ class MaxHeap {
     const oldRoot = this.values[0];
     const end = this.values.pop();
     this.values[0] = end;
-    this.bubbleDown();
+    this.sinkDown();
     return oldRoot ? oldRoot : null;
   }
 
@@ -34,7 +34,7 @@ class MaxHeap {
     }
   }
 
-  bubbleDown(index = 0) {
+  sinkDown(index = 0) {
     let childLeftIndex = 2 * index + 1;
     let childRightIndex = 2 * index + 2;
 
@@ -52,7 +52,7 @@ class MaxHeap {
         this.values[greaterIndex],
         this.values[index],
       ];
-      this.bubbleDown(greaterIndex);
+      this.sinkDown(greaterIndex);
     }
   }
 
